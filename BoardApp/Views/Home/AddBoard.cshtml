@@ -14,5 +14,31 @@
         <div>
             This view is used to add a board
         </div>
+
+        <form asp-action="AddBoard" method="post">
+             <p>
+                <label asp-for="BoardCode">Board code:</label>
+                <input asp-for="BoardCode"/>
+            </p>
+             <p>
+                <label asp-for="Make">Manufacturer:</label>
+                <input asp-for="Make"/>
+            </p>
+             <p>
+                <label asp-for="Model">Model:</label>
+                <input asp-for="Model" />
+            </p>
+             <p>
+                <label asp-for="FlashKb">Flash size in KB:</label>
+                <input asp-for="FlashKb"/>
+            </p>
+             <p>
+                <label asp-for="Price">Price:</label>
+                <input asp-for="Price"/>
+            </p>
+             <p>
+                <button type="submit">Add new board</button>
+            </p>
+        </form>
     </body>
 </html>
