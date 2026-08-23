@@ -38,6 +38,6 @@ public class HomeController : Controller
     public ViewResult AddBoard(Board board)
     { 
         Repository.AddBoard(board);
-        return View();
+        return View("BoardAdded", board);
     }
 }
