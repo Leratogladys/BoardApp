@@ -40,4 +40,9 @@ public class HomeController : Controller
         Repository.AddBoard(board);
         return View("BoardAdded", board);
     }
+
+    public ViewResult ListBoards()
+    {
+        return View(Repository.Boards);
+    }
 }
