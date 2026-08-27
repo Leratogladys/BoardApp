@@ -20,15 +20,16 @@ public class Board
     public string Model { get; set; }
 
     [Required(ErrorMessage = "The flash size is required.")]
-    //[Range(minimum: 16, maximum: 4096, 
-	//	ErrorMessage = "The flash size must be between 16 and 4096 inclusive.")]
+    [Range(minimum: 16, maximum: 4096, 
+		ErrorMessage = "The flash size must be between 16 and 4096 inclusive.")]
     [Display(Name = "Flash (KB)")]
     public int? FlashKb { get; set; }
 
 	[Required(ErrorMessage = "The price is required.")]
-//	[Range(minimum: 1.00, maximum:5000.00,
-		//ErrorMessage = "The price must be between R1.00 and R5000.00 inclusive.")]
+	[Range(minimum: 1.00, maximum:5000.00,
+		ErrorMessage = "The price must be between R1.00 and R5000.00 inclusive.")]
     [Display(Name = "Price (R)")]
+	[DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
     public decimal? Price { get; set; }
 
 	public Board () { }
