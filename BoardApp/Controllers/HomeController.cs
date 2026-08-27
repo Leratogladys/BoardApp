@@ -36,9 +36,13 @@ public class HomeController : Controller
 
     [HttpPost]
     public ViewResult AddBoard(Board board)
-    { 
-        Repository.AddBoard(board);
-        return View("BoardAdded", board);
+    {
+        if (ModelState.IsValid)
+        {
+            Repository.AddBoard(board);
+            return View("BoardAdded", board);
+        }
+        return View();
     }
 
     public ViewResult ListBoards()

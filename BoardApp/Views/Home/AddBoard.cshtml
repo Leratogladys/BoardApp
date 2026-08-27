@@ -16,25 +16,31 @@
         </div>
 
         <form asp-action="AddBoard" method="post">
+            <div asp-validation-summary="All"></div>
              <p>
                 <label asp-for="BoardCode">Board code:</label>
                 <input asp-for="BoardCode"/>
+                <span asp-validation-for="BoardCode"></span>
             </p>
              <p>
                 <label asp-for="Make">Manufacturer:</label>
                 <input asp-for="Make"/>
+                <span asp-validation-for="Make"></span>
             </p>
              <p>
                 <label asp-for="Model">Model:</label>
                 <input asp-for="Model" />
+                <span asp-validation-for="Model"></span>
             </p>
              <p>
                 <label asp-for="FlashKb">Flash size in KB:</label>
                 <input asp-for="FlashKb"/>
+                <span asp-validation-for="FlashKb"></span>
             </p>
              <p>
                 <label asp-for="Price">Price:</label>
                 <input asp-for="Price"/>
+                <span asp-validation-for="Price"></span>
             </p>
              <p>
                 <button type="submit">Add new board</button>
