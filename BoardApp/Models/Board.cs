@@ -29,7 +29,7 @@ public class Board
 	[Range(minimum: 1.00, maximum:5000.00,
 		ErrorMessage = "The price must be between R1.00 and R5000.00 inclusive.")]
     [Display(Name = "Price (R)")]
-	[DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
+	[DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = false)]
     public decimal? Price { get; set; }
 
 	public Board () { }
