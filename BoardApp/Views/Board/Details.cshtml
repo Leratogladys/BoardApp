@@ -1,0 +1,31 @@
+﻿@model BoardApp.Models.Board
+
+@{
+    ViewData["Title"] = "Board Details";
+}
+
+<h1>Board Details</h1>
+<h4>Selected Board</h4>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.BoardCode)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.BoardCode)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Make)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Make)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Model)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Model)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.FlashKb)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.FlashKb)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model => model.Price)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Price)</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BoardCode">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

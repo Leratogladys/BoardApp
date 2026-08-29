@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using BoardApp.Infrastructure;
 
 namespace BoardApp.Models;
 
@@ -20,8 +21,9 @@ public class Board
     public string Model { get; set; }
 
     [Required(ErrorMessage = "The flash size is required.")]
-    [Range(minimum: 16, maximum: 4096, 
-		ErrorMessage = "The flash size must be between 16 and 4096 inclusive.")]
+	[VerifyFlashSize]
+   // [Range(minimum: 16, maximum: 4096, 
+	//	ErrorMessage = "The flash size must be between 16 and 4096 inclusive.")]
     [Display(Name = "Flash (KB)")]
     public int? FlashKb { get; set; }
 

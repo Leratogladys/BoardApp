@@ -18,7 +18,7 @@
                 new Board("1008", "Raspberry Pi", "Pico", 2048, 89.00m),
                 new Board("1009", "Espressif", "ESP-01S", 1024, 65.00m),
                 new Board("1010", "CUTfree", "CV32-BFN-01", 128, 49.00m),
-                new Board("7070", "UFSfree", "HYV-906-FS", 232, 54.05m)
+         
             };
         }
         public static IEnumerable<Board> Boards { get { return boards; } }
@@ -29,6 +29,31 @@
             boards.Add(board);
         }
 
-        
+        public static Board? GetByBoardCode(string boardCode)
+        {
+            return boards.FirstOrDefault(b => b.BoardCode == boardCode);
+        }
+
+        public static void RemoveBoard(string boardCode)
+        {
+            Board? board = GetByBoardCode(boardCode);
+            if (board != null)
+            {
+                boards.Remove(board);
+            }
+
+        }
+
+        public static void UpdateBoard(Board updateBoard)
+        {
+            Board? board = GetByBoardCode(updateBoard.BoardCode);
+            if (board != null)
+            {
+                board.Make = updateBoard.Make;
+                board.Model = updateBoard.Model;
+                board.FlashKb = updateBoard.FlashKb;
+                board.Price = updateBoard.Price;
+            }
+        }
     }
 }
