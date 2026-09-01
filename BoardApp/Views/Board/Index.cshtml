@@ -27,9 +27,9 @@
                 <td>@Html.DisplayFor(modelItem => item.FlashKb)</td>
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BoardCode }) |
                     @Html.ActionLink("Details", "Details", new { id = item.BoardCode }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BoardCode })
                 </td>
             </tr>
         }
