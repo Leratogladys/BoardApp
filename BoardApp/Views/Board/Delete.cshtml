@@ -52,10 +52,27 @@
     </dl>
 
     <form asp-action="Delete">
-        <!-- THIS IS THE REQUIRED MODIFICATION -->
         @Html.HiddenFor(model => model.BoardCode)
-
-        <input type="submit" value="Delete" class="btn btn-danger" />
-        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
     </form>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
